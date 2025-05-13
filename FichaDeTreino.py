@@ -79,3 +79,29 @@ janela.title("Ficha de Treino")
 
 largura = 902
 altura = 564
+
+background_photo = tk.PhotoImage(file="FUNDOOO.png")
+
+background_label = tk.Label(janela, image=background_photo)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+largura_tela = janela.winfo_screenwidth()
+altura_tela = janela.winfo_screenheight()
+pos_x = int((largura_tela / 1) - (largura / 1))
+pos_y = int((altura_tela / 1) - (altura / 1))
+janela.geometry(f"{largura}x{altura}+{pos_x}+{pos_y}")
+
+label_nome = tk.Label(janela, text="Nome:")
+label_nome.pack()
+entry_nome = tk.Entry()
+entry_nome.pack()
+
+label_idade = tk.Label(janela, text="Idade:")
+label_idade.pack(pady=5)
+entry_idade = tk.Entry(janela, font=("TkDefaultFont", 10))
+entry_idade.pack(pady=5)
+
+label_peso = tk.Label(janela, text="Peso:")
+label_peso.pack(pady=5)
+entry_peso = tk.Entry(janela, font=("TkDefaultFont", 10))
+entry_peso.pack(pady=5)
