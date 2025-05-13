@@ -105,3 +105,7 @@ label_peso = tk.Label(janela, text="Peso:")
 label_peso.pack(pady=5)
 entry_peso = tk.Entry(janela, font=("TkDefaultFont", 10))
 entry_peso.pack(pady=5)
+
+botao_atualizar = tk.Button(janela, text="Atualizar Lista", command=atualizar_lista)
+botao_atualizar.pack(pady=10)
+
