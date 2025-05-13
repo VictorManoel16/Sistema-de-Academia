@@ -64,3 +64,18 @@ def atualizar_lista():
             "Abdominal supra",
             "Abdominal infra"
         ]
+    listbox_exercicios.delete(0, tk.END)
+    for exercicio in lista_exercicios:
+        listbox_exercicios.insert(tk.END, exercicio)
+
+    
+    with open("lista_exercicios.txt", "w") as arquivo:
+        for exercicio in lista_exercicios:
+            arquivo.write(exercicio + "\n")
+    def realizar_pesquisa():
+        resultado_label.config(text="Atualizar Lista")
+        janela = tk.Tk()
+janela.title("Ficha de Treino")
+
+largura = 902
+altura = 564
