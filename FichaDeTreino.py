@@ -109,3 +109,9 @@ entry_peso.pack(pady=5)
 botao_atualizar = tk.Button(janela, text="Atualizar Lista", command=atualizar_lista)
 botao_atualizar.pack(pady=10)
 
+listbox_exercicios = tk.Listbox(janela, font=("TkDefaultFont", 20))
+listbox_exercicios.pack()
+resultado_label = tk.Label(janela)
+resultado_label.pack()
+
+janela.mainloop()
