@@ -90,7 +90,7 @@ def abrir_nova_janela():
 janela = tk.Tk()
 janela.title("Ficha de Treino")
 
-largura = 902
+largura = 904
 altura = 564
 
 background_photo = tk.PhotoImage(file="imagem_de_fundo.png")
