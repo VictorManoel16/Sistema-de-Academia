@@ -5,6 +5,7 @@ def atualizar_lista():
     nome = entry_nome.get()
     idade = int(entry_idade.get())
     peso = float(entry_peso.get())
+
     lista_exercicios = []
     if idade < 30:
         lista_exercicios = [
@@ -64,23 +65,28 @@ def atualizar_lista():
             "Abdominal supra",
             "Abdominal infra"
         ]
+
     listbox_exercicios.delete(0, tk.END)
     for exercicio in lista_exercicios:
         listbox_exercicios.insert(tk.END, exercicio)
 
-    
+ 
     with open("lista_exercicios.txt", "w") as arquivo:
         for exercicio in lista_exercicios:
             arquivo.write(exercicio + "\n")
-    def realizar_pesquisa():
-        resultado_label.config(text="Atualizar Lista")
-        janela = tk.Tk()
+
+def realizar_pesquisa():
+    resultado_label.config(text="Atualizar Lista")
+
+
+janela = tk.Tk()
 janela.title("Ficha de Treino")
 
 largura = 902
 altura = 564
 
-background_photo = tk.PhotoImage(file="FUNDOOO.png")
+
+background_photo = tk.PhotoImage(file="imagem_de_fundo.png")
 
 background_label = tk.Label(janela, image=background_photo)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
@@ -90,6 +96,7 @@ altura_tela = janela.winfo_screenheight()
 pos_x = int((largura_tela / 1) - (largura / 1))
 pos_y = int((altura_tela / 1) - (altura / 1))
 janela.geometry(f"{largura}x{altura}+{pos_x}+{pos_y}")
+
 
 label_nome = tk.Label(janela, text="Nome:")
 label_nome.pack()
@@ -109,8 +116,10 @@ entry_peso.pack(pady=5)
 botao_atualizar = tk.Button(janela, text="Atualizar Lista", command=atualizar_lista)
 botao_atualizar.pack(pady=10)
 
+
 listbox_exercicios = tk.Listbox(janela, font=("TkDefaultFont", 20))
 listbox_exercicios.pack()
+
 resultado_label = tk.Label(janela)
 resultado_label.pack()
 
